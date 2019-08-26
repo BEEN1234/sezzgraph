@@ -1,0 +1,19 @@
+
+<div [@fadeIn] class="animationFadeIn containerAll">
+  <div id="bg-img" z-index="1"></div>
+  <h1 >Welcome to Stockly - <span class="smaller">a simple stock visualization tool</span></h1>
+  <h1 >To begin, select a stock</h1>
+  <div class="centerContent core">
+    <select name="symbols" #input id="symbols" [(ngModel)]="userSymbol" (change)="symbolSelected(input)">
+      <option value="null">Apple</option>
+      <option *ngFor="let symbol of symbols" [value]="symbol.symbol">{{symbol.name}}</option>
+    </select>
+  </div>
+  <h1 >And we'll graph the latest year of prices</h1>
+  <div class="borderBox core">
+    <div id="graphOutput"></div>
+  </div>
+</div>
+
+<br>
+{{interpolateMe}}
